@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Chitchat</string>
+    <string name="login">Login</string>
 </resources>

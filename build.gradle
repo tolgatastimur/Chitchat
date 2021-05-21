@@ -1,16 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.32"
+    ext.kotlin_version = '1.3.61'
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.3"
+        classpath 'com.android.tools.build:gradle:4.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -18,7 +16,80 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
+}
+ext {
+
+    buildToolsVersion = '30.0.3'
+    compileSdkVersion = 30
+    targetSdkVersion = 30
+    minSdkVersion = 23
+
+    support_version = '1.0.0-rc02'
+    rxJavaVersion = '2.1.14'
+    rxKotlinVersion = '2.2.0'
+    daggerVersion = '2.23.2'
+    retrofitVersion = '2.6.0'
+    okHttpVersion = '3.10.0'
+    gsonVersion = '2.8.5'
+    lifecycle_version = "1.1.1"
+    androidxLifecycleVersion = "2.2.0-alpha02"
+    anko_version = "0.10.4"
+    loggingInterceptorVersion = "3.8.0"
+    glideVersion = "4.11.0"
+    constraintLayoutVersion = "2.0.4"
+    materialVersion = "1.3.0-rc01"
+    multidexVersion = "2.0.1"
+    dataBindingVersion = "3.1.4"
+    navigationVersion = "2.3.4"
+
+    //supportLib
+    legacySupport = "androidx.legacy:legacy-support-v4:$support_version"
+    appCompat = "androidx.appcompat:appcompat:$support_version"
+    recyclerView = "androidx.recyclerview:recyclerview:$support_version"
+    cardView = "androidx.cardview:cardview:$support_version"
+    multidex = "androidx.multidex:multidex:$multidexVersion"
+
+    //ui
+    constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    material = "com.google.android.material:material:$materialVersion"
+
+    //arch-comp Lifecycles, LiveData, and ViewModel
+    lifecycleExt = "android.arch.lifecycle:extensions:$lifecycle_version"
+    lifecycleCommon = "android.arch.lifecycle:common-java8:$lifecycle_version"
+
+    //data binding
+    dataBindingAnnotation = "com.android.databinding:compiler:$dataBindingVersion"
+
+    //rx
+    rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
+    rxKotlin = "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+
+    //dagger
+    dagger = "com.google.dagger:dagger-android:$daggerVersion"
+    daggerSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
+    daggerAnnotation = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    daggerApt = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    //net
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    okHttp = "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    gson = "com.google.code.gson:gson:$gsonVersion"
+    loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
+    rxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    gsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //glide
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    glideAnnotation = "com.github.bumptech.glide:compiler:$glideVersion"
+
+    //navigation
+    navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }
 
 task clean(type: Delete) {
