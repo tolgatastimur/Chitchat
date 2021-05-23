@@ -4,6 +4,8 @@ import android.os.Environment
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.tolga.chitchat.BuildConfig
+import com.tolga.chitchat.domain.MeditopiaApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -59,12 +61,11 @@ class NetModule {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     }
-/*
     @Provides
     @Singleton
-    fun provideService(retrofit: Retrofit.Builder): PokeApi {
+    fun provideService(retrofit: Retrofit.Builder): MeditopiaApi {
         return retrofit.baseUrl(BuildConfig.API_URL)
                 .build()
-                .create(PokeApi::class.java)
-    }*/
+                .create(MeditopiaApi::class.java)
+    }
 }

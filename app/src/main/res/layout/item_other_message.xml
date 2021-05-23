@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.tolga.chitchat.domain.models.Message" />
+
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin8"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/avatarImageView"
+            circleImageUrl="@{message.user.avatarURL}"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            android:layout_marginEnd="@dimen/margin64"
+            android:layout_toRightOf="@id/avatarImageView"
+            android:background="@drawable/bg_message"
+            android:orientation="vertical"
+            android:padding="@dimen/margin8">
+
+            <TextView
+                textColor="@{message.user.id}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{message.user.nickname}"
+                android:textSize="@dimen/font14"
+                tools:text="Test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="@{message.text}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font14"
+                tools:text="Test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@{message.formattedTime}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font8"
+                tools:text="Test" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

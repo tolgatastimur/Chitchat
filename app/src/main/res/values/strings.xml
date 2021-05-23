@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Chitchat</string>
     <string name="login">Login</string>
+    <string name="username_length_error">Username must be longer than 2 character.</string>
+    <string name="empty_message_error">Message can not be empty.</string>
+    <string name="welcome">Welcome</string>
+    <string name="generic_service_error">500 Internal Server Error</string>
+    <string name="message_hint">Message</string>
 </resources>

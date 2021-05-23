@@ -1,5 +1,6 @@
 package com.tolga.vngrs.di.module
 
+import com.tolga.chitchat.di.module.FragmentBuildersModule
 import com.tolga.chitchat.di.scope.ActivityScope
 import com.tolga.chitchat.ui.MainActivity
 
@@ -10,7 +11,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
 
     @ActivityScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [FragmentBuildersModule::class])
     internal abstract fun mainActivity(): MainActivity
 
 }
