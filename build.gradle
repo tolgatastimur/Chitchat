@@ -30,8 +30,8 @@ ext {
     rxJavaVersion = '2.1.14'
     rxKotlinVersion = '2.2.0'
     daggerVersion = '2.23.2'
-    retrofitVersion = '2.6.0'
-    okHttpVersion = '3.10.0'
+    retrofitVersion = '2.9.0'
+    okHttpVersion = '4.9.1'
     gsonVersion = '2.8.5'
     lifecycle_version = "1.1.1"
     androidxLifecycleVersion = "2.2.0-alpha02"
@@ -44,6 +44,11 @@ ext {
     dataBindingVersion = "3.1.4"
     navigationVersion = "2.3.4"
     hawkVersion = "2.0.1"
+    mockWebVersion = "4.9.1"
+    jUnitVersion = "4.13.2"
+    jUnitextVersion = "1.1.2"
+    espressoVersion = "3.3.0"
+    testVersion = "1.3.0"
 
     //supportLib
     legacySupport = "androidx.legacy:legacy-support-v4:$support_version"
@@ -92,6 +97,14 @@ ext {
 
     //Hawk - storage
     hawk = "com.orhanobut:hawk:$hawkVersion"
+
+    //Test
+    mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebVersion"
+    jUnit = "junit:junit:$jUnitVersion"
+    jUnitExt = "androidx.test.ext:junit:$jUnitextVersion"
+    espressoCore = "androidx.test.espresso:espresso-core:$espressoVersion"
+    testRunner = "androidx.test:runner:$testVersion"
+    testRules = "androidx.test:rules:$testVersion"
 
     buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }

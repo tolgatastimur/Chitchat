@@ -42,6 +42,9 @@ android {
     androidExtensions {
         experimental = true
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -95,6 +98,14 @@ dependencies {
 
     //Storage
     implementation rootProject.ext.hawk
+
+    //Test
+    testImplementation rootProject.ext.mockWebServer
+    testImplementation rootProject.ext.jUnit
+    androidTestImplementation rootProject.ext.jUnitExt
+    androidTestImplementation rootProject.ext.espressoCore
+    androidTestImplementation rootProject.ext.testRunner
+    androidTestImplementation rootProject.ext.testRules
 }
 repositories {
     mavenCentral()
