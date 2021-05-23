@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.tolga.chitchat.R
 import com.tolga.chitchat.base.BaseFragment
 import com.tolga.chitchat.databinding.FragmentLoginBinding
+import com.tolga.chitchat.utils.hideKeyboard
 import com.tolga.chitchat.utils.setSafeOnClickListener
 
 
@@ -29,6 +30,7 @@ class LoginFragment : BaseFragment<LoginFragmentViewModel, FragmentLoginBinding>
 
     private fun login(username: String) {
         if (username.isNotEmpty() && username.length > 2) {
+            hideKeyboard()
             binding.userNameTextInputEditText.text?.clear()
             binding.viewModel?.setUsername(username = username)
             navigateToConversationFragment()
