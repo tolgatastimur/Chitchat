@@ -35,7 +35,7 @@ class ConversationRepositoryUnitTest {
     }
 
     @Test
-    fun chatData_parseCorrefctly() {
+    fun chatData_parseCorrectly() {
         mockServer.apply {
             enqueue(MockResponse()
                     .setResponseCode(200)

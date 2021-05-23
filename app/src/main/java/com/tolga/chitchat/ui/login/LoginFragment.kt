@@ -29,6 +29,7 @@ class LoginFragment : BaseFragment<LoginFragmentViewModel, FragmentLoginBinding>
 
     private fun login(username: String) {
         if (username.isNotEmpty() && username.length > 2) {
+            binding.userNameTextInputEditText.text?.clear()
             binding.viewModel?.setUsername(username = username)
             navigateToConversationFragment()
         } else {
